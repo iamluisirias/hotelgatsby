@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import Navegacion from './navegacion';
 
 const EnlaceHome = styled(Link)`
     color: #fff;
@@ -19,12 +18,16 @@ const EnlaceHome = styled(Link)`
 
 `;
 
-const Header = ({siteName}) => {
+const Footer = ({title}) => {
+    
+    const year = new Date().getFullYear();
+
     return (
-        <header
+        <footer
             css={css`
                 background-color: rgba(44,62,80);
                 padding: 1rem;
+                margin-top: 5rem;
             `}
         >
             <div
@@ -40,13 +43,13 @@ const Header = ({siteName}) => {
                 `}
             >
                 <EnlaceHome to={'/'}>
-                    <h1>{siteName}</h1>
+                    <h1>{title}</h1>
                 </EnlaceHome>
-
-                <Navegacion/>
+                <p css={css`color: #fff`}>Hotel Gatsby. Todos los derechos reservados</p>
+                <p css={css`color: #fff`}>Copyright &#169; {year}</p>
             </div>
-        </header>
+        </footer>
     );
 };
 
-export default Header;
+export default Footer;

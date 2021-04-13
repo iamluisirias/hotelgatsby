@@ -26,7 +26,7 @@ const TextoInicio = styled.div`
 const ContenidoInicio = () => {
     
     const informacion = useStaticQuery(graphql`
-        query MyQuery {
+        query {
             allDatoCmsPagina(filter: {slug: {eq: "inicio"}}) {
                 nodes {
                     titulo
